@@ -1,0 +1,42 @@
+.menuinner{
+    display: flex;
+    flex-direction: column;
+    padding:10px 25px;
+    text-transform: capitalize;
+}
+
+.headmenu{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+
+
+}
+.bodymenu{
+    display: flex;
+    gap:15px;
+    padding:7px 0px;
+}
+.hr{
+    margin:12px 0px;
+    border:0.1px solid #e6cbcb8f;
+}
+.butt{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    padding:5px 15px;
+    background-color: transparent;
+    border:1px solid #3ea6ff;
+    color: #3ea6ff;
+    border-radius: 3px;
+    font-weight: 500;
+    margin-top: 10px;
+    cursor: pointer;
+
+}
+.sticky{
+    position: sticky !important;
+    z-index: 1000;
+    top:0;
+}

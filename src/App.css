@@ -1,0 +1,34 @@
+.menu::-webkit-scrollbar{
+  display: none;
+    }
+
+    .vv{
+border-block:none;
+    }
+
+
+
+/*.App{
+  display: flex;
+}
+.menu{
+  flex:1;
+  background-color: black;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  position:sticky;
+top:0;
+font-size: 14px;
+  color: white;
+}
+.menu::-webkit-scrollbar{
+display: none;
+  }
+
+.App2{
+  flex:7;
+  color: aliceblue;
+  background-color: #181818;
+ 
+}*/
