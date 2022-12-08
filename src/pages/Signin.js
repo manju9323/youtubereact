@@ -60,7 +60,7 @@ function Signin() {
   e.preventDefault();
   dispatch(loginStart())
   try{
-    await axios.post("http://localhost:8000/api/auth/login",{email,password}
+    await axios.post("https://youtubenode.onrender.com/api/auth/login",{email,password}
     )
    
     .then( res=>{
@@ -82,7 +82,7 @@ function Signin() {
   const register=async(e)=>{
   e.preventDefault();
   try{
-    await axios.post("http://localhost:8000/api/auth/register",{email,password,name}
+    await axios.post("https://youtubenode.onrender.com/api/auth/register",{email,password,name}
     )
     .then( res=>{
       navigate(`/`)
@@ -99,7 +99,7 @@ const Googlebutton=async()=>{
   dispatch(loginStart())
   signInWithPopup(auth,provider)
   .then((result)=>{
-      axios.post("http://localhost:8000/api/auth/google",
+      axios.post("https://youtubenode.onrender.com/api/auth/google",
       { name:result.user.displayName,
         email:result.user.email,
         img:result.user.photoURL})

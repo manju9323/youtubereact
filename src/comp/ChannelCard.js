@@ -69,7 +69,7 @@ function ChannelCard({type,video}) {
 
    const  del=async(e)=>{
       console.log(video._id)
-      await axios.delete(`http://localhost:8000/api/videos/${video._id}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
+      await axios.delete(`https://youtubenode.onrender.com/api/videos/${video._id}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
         .then( res=>{toast.success('successful deleted', {autoClose:3000})
         navigate(`/channel/${currentChannelvisit}`)
      })

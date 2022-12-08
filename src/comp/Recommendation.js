@@ -12,7 +12,7 @@ const Recommendation = ({tags}) => {
     useEffect(()=>{
       console.log(tags)
       const fetchVideos = async()=>{
-         const res= await axios.get(`http://localhost:8000/api/videos/tags?tags=${tags}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
+         const res= await axios.get(`https://youtubenode.onrender.com/api/videos/tags?tags=${tags}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
          setVideos(res.data)
          console.log(res.data)
     }

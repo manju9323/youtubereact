@@ -73,13 +73,13 @@ function Comment({comment,func}) {
 
   useEffect(()=>{
     const fetchComment=async()=>{
-      const res=await axios.get(`http://localhost:8000/api/users/find/${comment.userId}`)
+      const res=await axios.get(`https://youtubenode.onrender.com/api/users/find/${comment.userId}`)
       setChannel(res.data)};
     fetchComment()
   },[comment.userId])
 
   const  del=async(e)=>{
-    await axios.delete(`http://localhost:8000/api/comments/${comment._id}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
+    await axios.delete(`https://youtubenode.onrender.com/api/comments/${comment._id}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
       .then( res=>{toast.success('successful deleted', {autoClose:3000})
        func()
    })

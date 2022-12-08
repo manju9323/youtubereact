@@ -133,9 +133,9 @@ function Videos() {
   useEffect(()=>{
     const fetchData=async()=>{
       try{
-        const videoRes=await axios.get(`http://localhost:8000/api/videos/find/${path.id}/${currentUser? currentUser._id : "nouser"}`
+        const videoRes=await axios.get(`https://youtubenode.onrender.com/api/videos/find/${path.id}/${currentUser? currentUser._id : "nouser"}`
         )
-        const channelRes=await axios.get(`http://localhost:8000/api/users/find/${videoRes.data.userId}`
+        const channelRes=await axios.get(`https://youtubenode.onrender.com/api/users/find/${videoRes.data.userId}`
         )
         //console.log(channelRes.data)
         setChannel(channelRes.data)
@@ -152,21 +152,21 @@ function Videos() {
  
   const handelLike= async()=>{
     
-     await axios.put(`http://localhost:8000/api/users/like/${currentVideo._id}`,{data:"mm"},
+     await axios.put(`https://youtubenode.onrender.com/api/users/like/${currentVideo._id}`,{data:"mm"},
      {headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
      dispatch(like(currentUser._id))
   }
   const handelDislike=async()=>{
-    await axios.put(`http://localhost:8000/api/users/dislike/${currentVideo._id}`,{data:"mm"},
+    await axios.put(`https://youtubenode.onrender.com/api/users/dislike/${currentVideo._id}`,{data:"mm"},
     {headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
     dispatch(dislike(currentUser._id))
   }
 
   const handelSub=async()=>{
      currentUser.SubscribedUsers.includes(channel._id)
-        ? await axios.put(`http://localhost:8000/api/users/unsub/${channel._id}`,{data:"mm"},
+        ? await axios.put(`https://youtubenode.onrender.com/api/users/unsub/${channel._id}`,{data:"mm"},
           {headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
-        : await axios.put(`http://localhost:8000/api/users/sub/${channel._id}`,{data:"mm"},
+        : await axios.put(`https://youtubenode.onrender.com/api/users/sub/${channel._id}`,{data:"mm"},
           {headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
      dispatch(subscription(channel._id))
   }

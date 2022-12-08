@@ -132,9 +132,9 @@ function Videos() {
   useEffect(()=>{
     const fetchData=async()=>{
       try{
-        const videoRes=await axios.get(`http://localhost:8000/api/videos/find/${path}/${currentUser? currentUser._id : "nouser"}`
+        const videoRes=await axios.get(`https://youtubenode.onrender.com/api/videos/find/${path}/${currentUser? currentUser._id : "nouser"}`
         )
-        const channelRes=await axios.get(`http://localhost:8000/api/users/find/${videoRes.data.userId}`
+        const channelRes=await axios.get(`https://youtubenode.onrender.com/api/users/find/${videoRes.data.userId}`
         )
         //console.log(channelRes.data)
         setChannel(channelRes.data)

@@ -1,0 +1,10 @@
+.postvideo{
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid blue;
+    padding:10px
+}
+
+.circle{
+cursor:pointer
+}

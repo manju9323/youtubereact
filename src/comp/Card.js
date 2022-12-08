@@ -68,7 +68,7 @@ function Card({type,video}) {
    
     const fetchChannel = async()=>{
 
-       const res= await axios.get(`http://localhost:8000/api/users/find/${video.userId}`
+       const res= await axios.get(`https://youtubenode.onrender.com/api/users/find/${video.userId}`
        );
        console.log("reeeee",res.data)
        await setChannel(res.data)

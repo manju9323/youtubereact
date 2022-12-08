@@ -19,7 +19,7 @@ const Search = () => {
  
     useEffect(()=>{
        const fetchVideos=async()=>{
-        const res= await axios.get(`http://localhost:8000/api/videos/search${query}`)
+        const res= await axios.get(`https://youtubenode.onrender.com/api/videos/search${query}`)
         setVideos(res.data)
        }
   fetchVideos()

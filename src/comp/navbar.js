@@ -7,6 +7,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 import Upload from './upload';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
+import "./nav.css"
 
 const Container=styled.div`
  position: sticky;
@@ -75,6 +76,9 @@ function Nav() {
   const [open,setOpen]=useState(false)
   const [q,setQ]=useState("")
   const {currentUser}=useSelector(state=>state.user)
+
+ 
+
   return (
     <>
   <Container>
@@ -85,7 +89,7 @@ function Nav() {
       </Search>
     {currentUser ? (
       <User>
-      <VideoCallIcon onClick={()=>setOpen(true)}/>
+      <VideoCallIcon onClick={()=>setOpen(true)} className={open ? "postvideo" : "circle"} />
       <Avatar src={currentUser.img}/>
       {console.log(currentUser.name)}
       {currentUser.name}

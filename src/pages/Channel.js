@@ -89,11 +89,11 @@ const Channel = () => {
 
    useEffect(()=>{
      const fetchVideos = async()=>{
-        const channel= await axios.get(`http://localhost:8000/api/users/find/${params.id}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
+        const channel= await axios.get(`https://youtubenode.onrender.com/api/users/find/${params.id}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
         dispatch(currentChannel(params.id))
         setchannel(channel.data)
        // console.log("channel",channel.data)
-        const res= await axios.get(`http://localhost:8000/api/videos/findsamevideo/${channel.data._id}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
+        const res= await axios.get(`https://youtubenode.onrender.com/api/videos/findsamevideo/${channel.data._id}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
       //  console.log("videos",res.data)
         setVideos(res.data)
    }
@@ -103,9 +103,9 @@ const Channel = () => {
 
    const handelSub=async()=>{
      currentUser.SubscribedUsers.includes(channel._id)
-        ? await axios.put(`http://localhost:8000/api/users/unsub/${channel._id}`,{data:"mm"},
+        ? await axios.put(`https://youtubenode.onrender.com/api/users/unsub/${channel._id}`,{data:"mm"},
           {headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
-        : await axios.put(`http://localhost:8000/api/users/sub/${channel._id}`,{data:"mm"},
+        : await axios.put(`https://youtubenode.onrender.com/api/users/sub/${channel._id}`,{data:"mm"},
           {headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
          dispatch(subscription(channel._id))
   }

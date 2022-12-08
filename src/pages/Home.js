@@ -17,7 +17,7 @@ function Home({type}) {
   const [videos,setVideos]=useState([])
   useEffect(()=>{
     const fetchVideos = async()=>{
-       const res= await axios.get(`http://localhost:8000/api/videos/${type}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
+       const res= await axios.get(`https://youtubenode.onrender.com/api/videos/${type}`,{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
        console.log("home",res.data)
        setVideos(res.data)
   }

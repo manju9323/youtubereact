@@ -42,7 +42,7 @@ function Comments({videoId}) {
 
   const fetchComments=async()=>{
     try{
-      const res=await axios.get(`http://localhost:8000/api/comments/${videoId}`);
+      const res=await axios.get(`https://youtubenode.onrender.com/api/comments/${videoId}`);
       setComments(res.data)
     }
     catch(err){
@@ -55,7 +55,7 @@ function Comments({videoId}) {
 
 const send=async()=>{
   try{
-    const res=await axios.post("http://localhost:8000/api/comments",{videoId,desc:newcomment},{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}});
+    const res=await axios.post("https://youtubenode.onrender.com/api/comments",{videoId,desc:newcomment},{headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}});
      setnewComment("")
     fetchComments();
   }

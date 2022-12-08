@@ -16,6 +16,7 @@ background-color:#000000a7;
 display:flex;
 align-items:center;
 justify-content:center;
+z-index:1000;
 `
 
 const Wrapper=styled.div`
@@ -130,7 +131,7 @@ useEffect(() => {
 
   const handleUpload = async(e)=>{
     e.preventDefault();
-    const res = await axios.post("http://localhost:8000/api/videos", {...inputs, tags},
+    const res = await axios.post("https://youtubenode.onrender.com/api/videos", {...inputs, tags},
      {headers:{'mm':`${JSON.parse(localStorage.getItem("mm"))}`}})
     setOpen(false)
     console.log(...inputs,tags)
