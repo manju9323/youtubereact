@@ -166,10 +166,13 @@ function Menu({dark,light}) {
         Best of MMTUBE
       </Title>
 
+
+      <Link to="/trends" style={{textDecoration:"none",color:"inherit"}}>
       <Bodymenu>
         <LocalFireDepartmentIcon/>
       trending
       </Bodymenu>
+      </Link>
     
       <Bodymenu>
         <MusicNoteIcon/>

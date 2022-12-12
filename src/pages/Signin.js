@@ -99,6 +99,7 @@ const Googlebutton=async()=>{
   dispatch(loginStart())
   signInWithPopup(auth,provider)
   .then((result)=>{
+    console.log("users",result)
       axios.post("https://youtubenode.onrender.com/api/auth/google",
       { name:result.user.displayName,
         email:result.user.email,
